@@ -1,0 +1,40 @@
+{
+  "version": "0.0.1",
+  "description": "Run many coding agents on one repo without them getting in each other's way",
+  "homepage": "https://lanes.autter.dev",
+  "license": "AGPL-3.0-only",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/Autter-dev/lanes/releases/download/v0.0.1/lanes-0.0.1-x86_64-pc-windows-msvc.zip",
+      "hash": "2b545fe9c75b475395c4536876dc625441ee838e65d693a10c1793fae926f390",
+      "extract_dir": "lanes-0.0.1-x86_64-pc-windows-msvc"
+    },
+    "arm64": {
+      "url": "https://github.com/Autter-dev/lanes/releases/download/v0.0.1/lanes-0.0.1-aarch64-pc-windows-msvc.zip",
+      "hash": "76915c106c679aa59244eadb981938a3f620be5ed796a288078d0265ca9f7e03",
+      "extract_dir": "lanes-0.0.1-aarch64-pc-windows-msvc"
+    }
+  },
+  "bin": [
+    "lane.exe",
+    "laned.exe"
+  ],
+  "checkver": {
+    "github": "https://github.com/Autter-dev/lanes"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/Autter-dev/lanes/releases/download/v$version/lanes-$version-x86_64-pc-windows-msvc.zip",
+        "extract_dir": "lanes-$version-x86_64-pc-windows-msvc"
+      },
+      "arm64": {
+        "url": "https://github.com/Autter-dev/lanes/releases/download/v$version/lanes-$version-aarch64-pc-windows-msvc.zip",
+        "extract_dir": "lanes-$version-aarch64-pc-windows-msvc"
+      }
+    },
+    "hash": {
+      "url": "$url.sha256"
+    }
+  }
+}
